@@ -3,22 +3,24 @@ package com.matriz;
 import java.util.Scanner;
 
 public class Matriz {
+    static int[][] matriz = new int[3][3];
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+        System.out.println("Iniciando....");
 
-        int[][] matriz = new int[2][2];
-
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print("Digite o valor para matriz [" + i + ", " + j + "]: ");
-                matriz[i][j] = scanner.nextInt();
+        for (int i = 0; i < Matriz.matriz.length; i++) {
+            for (int j = 0; j < Matriz.matriz[i].length; j++) {
+                System.out.print("Digite os valores para matriz[" + i + ", " + j + "]: ");
+                matriz[i][j] = input.nextInt();
             }
         }
 
-        System.out.println("\nMatriz:");
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print(matriz[i][j] + " ");
+        System.out.println();
+        System.out.println("Resultado da matriz:");
+        for (int[] item : Matriz.matriz) {
+            for (int numero : item) {
+                System.out.print(numero + " ");
             }
             System.out.println();
         }
